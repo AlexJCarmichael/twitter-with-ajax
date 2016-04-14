@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.create!(username: "testuser", password: "password", passsword_confirmation: "password", email: "you@you.you",
+first_name: "Dane", last_name: "Carmichael", bio: "My cool bio")
+10.times do
+  Dane.create!(body: Faker::Hipster.sentence(4, true, 7), user_id: user.id)
+end

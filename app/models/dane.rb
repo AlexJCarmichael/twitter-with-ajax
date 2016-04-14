@@ -1,6 +1,9 @@
 class Dane < ActiveRecord::Base
-  belongs_to :user
 
-  validates :body, presence: :true
-  validates_length_of :body, maximum: 140, minimum: 1
+  validates :username, presence: true
+  validates :password_digest, presence: true
+  validates :email, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :bio, presence: true
 end

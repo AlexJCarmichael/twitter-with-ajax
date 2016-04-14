@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resource :danes
-  resource :users
+  resource :viveks
 
-  root 'tweets#index'
+  root 'vivekss#index'
 end

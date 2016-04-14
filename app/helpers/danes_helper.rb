@@ -1,0 +1,2 @@
+module DanesHelper
+end

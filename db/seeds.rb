@@ -9,5 +9,5 @@
 user = Dane.create!(username: "testuser", password: "password", email: "you@you.you",
 first_name: "Dane", last_name: "Carmichael", bio: "My cool bio")
 10.times do
-  Vivek.create!(body: Faker::Hipster.sentence(4, true, 7), user_id: user.id)
+  Vivek.create!(body: Faker::Hipster.sentence(4, true, 7), dane_id: user.id)
 end

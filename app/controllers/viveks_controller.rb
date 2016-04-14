@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+class ViveksController < ApplicationController
   def index
+    @viveks = Vivek.page(params[:page])
   end
 
   def show

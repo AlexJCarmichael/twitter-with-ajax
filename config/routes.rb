@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resource :danes
   resource :viveks
 
-  root 'vivekss#index'
+  root 'viveks#index'
 end

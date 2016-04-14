@@ -1,4 +1,5 @@
 class Dane < ActiveRecord::Base
+  has_many :viveks
 
   validates :username, presence: true
   validates :password_digest, presence: true

@@ -8,12 +8,17 @@ class DanesController < ApplicationController
   end
 
   def new
-    @dane = get_dane
+    @dane = Dane.new
   end
 
   def create
-    @dane = Dane.create!(vivek_params)
-    redirect_to @dane
+    @dane = Dane.new(dane_params)
+    if @dane.save
+      redirect_to root_path, notice: 'Dane created!'
+    else
+    flash.now[:alert] = 'Errors Occured'
+    render :new
+    end
   end
 
   def destroy
@@ -32,6 +37,6 @@ private
   end
 
   def dane_params
-    params.require(:dane).permit(:username, :password, :password_confirmation, :first_name, :last_name, :bio)
+    params.require(:dane).permit(:username, :password, :password_confirmation, :first_name, :last_name, :bio, :email)
   end
 end

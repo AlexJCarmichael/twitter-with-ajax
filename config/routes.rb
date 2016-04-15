@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resource :danes
-  resource :viveks
+  resources :danes
+  resources :viveks
 
   root 'viveks#index'
 end

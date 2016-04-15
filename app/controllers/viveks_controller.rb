@@ -1,4 +1,5 @@
 class ViveksController < ApplicationController
+  skip_before_action :authenticate_dane, only: [:show, :index]
   def index
     @viveks = Vivek.page(params[:page])
   end

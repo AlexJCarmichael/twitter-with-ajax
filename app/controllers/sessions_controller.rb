@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user
+  skip_before_action :authenticate_dane
 
   def sign_in
   end
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if dane.present?
       if dane.authenticate(params[:password])
-        session[:user_id] = dane.id
+        session[:dane_id] = dane.id
         flash.now[:notice] = "Successfully signed in!"
         redirect_to root_path
       else
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:dane_id] = nil
     flash.now[:notice] = "Signed out!"
     redirect_to root_path
   end

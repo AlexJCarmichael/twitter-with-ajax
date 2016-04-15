@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :danes
-  resources :viveks
+  resources :viveks, except: :destroy
 
   get '/sign_in', to: 'sessions#sign_in', as: 'sign_in'
   post '/sign_in', to: 'sessions#create'

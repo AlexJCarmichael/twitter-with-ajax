@@ -14,6 +14,7 @@ class DanesController < ApplicationController
 
   def create
     @dane = Dane.new(dane_params)
+    @dane.username = "🇩🇰" + @dane.username
     if @dane.save
       redirect_to root_path, notice: 'Dane created!'
     else

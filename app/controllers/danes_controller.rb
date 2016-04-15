@@ -1,5 +1,5 @@
 class DanesController < ApplicationController
-  skip_before_action :authenticate_dane, only: [:show, :index]
+  skip_before_action :authenticate_dane, only: [:show, :index, :new]
   def index
     @danes = Dane.page(params[:page])
   end
@@ -14,7 +14,6 @@ class DanesController < ApplicationController
 
   def create
     @dane = Dane.new(dane_params)
-    @dane.username = "🇩🇰" + @dane.username
     if @dane.save
       redirect_to root_path, notice: 'Dane created!'
     else

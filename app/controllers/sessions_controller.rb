@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
   def create
     dane = Dane.find_by(username: params[:username])
 
-
     if dane.present?
       if dane.authenticate(params[:password])
         session[:dane_id] = dane.id

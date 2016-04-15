@@ -22,7 +22,14 @@
     </ul>
   </nav>
 
+  <% if signed_in? %>
+    <%= link_to "What is on your mind?", new_vivek_path, class: "btn" %>
+  <% end %>
+
   <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, { class: "flash #{name}" }) %>
+    <% end %>
     <%= yield %>
   </div>
 

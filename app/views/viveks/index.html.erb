@@ -1,5 +1,6 @@
 <h1>Here all dem Tweets</h1>
 
 <% @viveks.each do |vivek| %>
-  <p> <%= link_to "#{vivek.dane.username}", dane_path(vivek.dane_id), class: "show-dane" %> <%= link_to "#{vivek.body}", vivek_path(vivek.id), class: "show-vivek" %> </p>
+  <p> <%= link_to "#{vivek.dane.danish}", dane_path(vivek.dane_id), class: "show-dane" %>
+      <%= link_to "#{vivek.body}", vivek_path(vivek.id), class: "show-vivek" %> </p>
 <% end %>

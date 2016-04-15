@@ -1,5 +1,5 @@
 class DanesController < ApplicationController
-  skip_before_action :authenticate_dane, only: [:show, :index, :new]
+  skip_before_action :authenticate_dane, only: [:show, :index, :new, :create]
   def index
     @danes = Dane.page(params[:page])
   end

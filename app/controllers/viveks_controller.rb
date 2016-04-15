@@ -13,8 +13,10 @@ class ViveksController < ApplicationController
   end
 
   def create
-    @vivek = Vivek.create!(vivek_params)
-    redirect_to @vivek
+    @vivek = Vivek.new(vivek_params)
+    @vivek.dane_id = session[:dane_id]
+    @vivek.save!
+    redirect_to root_path
   end
 
   def destroy

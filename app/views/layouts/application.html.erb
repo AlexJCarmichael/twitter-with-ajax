@@ -24,6 +24,15 @@
 
   <% if signed_in? %>
     <%= link_to "What is on your mind?", new_vivek_path, class: "btn" %>
+    <%= form_for Vivek.new,:html => {:class => 'new-tweet', :id => 'new-tweet'} do |f| %>
+    <div>
+      <%= f.label :tweet %>
+      <%= f.text_field :body %>
+    </div>
+    <div>
+        <%= f.submit "New Tweet" %>
+    </div>
+    <% end %>
   <% end %>
 
   <div class="container">

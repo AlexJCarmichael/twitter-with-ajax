@@ -1,3 +1,4 @@
+/* globals $ */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -15,3 +16,14 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
+
+var clicky = function () {
+    $("#show-new-tweet, #hide-new-tweet").on("click", function () {
+        $("#new-tweet").toggleClass("hide-me");
+    });
+};
+
+
+
+$(document).ready(clicky);
+$(document).on("page:load", clicky);

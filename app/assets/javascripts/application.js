@@ -21,6 +21,14 @@ var clicky = function () {
     $("#show-new-tweet, #hide-new-tweet").on("click", function () {
         $("#new-tweet").toggleClass("hide-me");
     });
+    var $newVivek = $("#new-tweet");
+    $newVivek.on("ajax:success", function(e, data) {
+        $newVivek.append("<p>" + data.message + "</p>");
+        $newVivek.find("#vivek_body").val("");
+    });
+    $newVivek.on("ajax:error", function(e, data) {
+        $newVivek.append("<p>" + data.message + "</p>");
+    });
 };
 
 

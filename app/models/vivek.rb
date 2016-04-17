@@ -8,4 +8,12 @@ class Vivek < ActiveRecord::Base
     "#{created_at.strftime('%r')} on #{created_at.strftime('%x')}"
   end
 
+  def dane_danish
+    dane.danish
+  end
+
+  def dane_username
+    dane.username
+  end
+
 end

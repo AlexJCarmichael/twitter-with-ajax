@@ -22,6 +22,17 @@ class DanesController < ApplicationController
     end
   end
 
+  def edit
+    @dane = get_dane
+  end
+
+  def update
+    @dane = get_dane
+    if @dane.update(dane_params)
+      redirect_to @dane
+    end
+  end
+
   def destroy
     @dane = get_dane
 

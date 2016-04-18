@@ -1,0 +1,12 @@
+<div class="vivek-card">
+  <%= form_for(@dane) do |f| %>
+    <p> Username: <%= f.text_field :username %></p>
+    <p> E-mail address: <%= f.text_field :email %></p>
+    <p> First name: <%= f.text_field :first_name %></p>
+    <p> Last name: <%= f.text_field :last_name %></p>
+    <p> Bio: <%= f.text_field :bio %></p>
+    <p> Password: <%= f.password_field :password %></p>
+    <p> Password Confirmation: <%= f.password_field :password_confirmation %></p>
+    <%= f.submit "Create Dane", class: "form-submit" %>
+  <% end %>
+</div>

@@ -23,18 +23,20 @@
   </nav>
 
   <% if signed_in? %>
-    <div class='btn' id='show-new-tweet'> What is on your mind? </div>
-    <%= form_for(Vivek.new, remote: true, :html => {:class => 'new-tweet', :id => 'new-tweet'}) do |f| %>
-    <div>
-      <%= f.label :tweet %>
-      <%= f.text_field :body %>
-    </div>
-    <div>
-        <%= f.submit "New Tweet", :id => 'hide-new-tweet' %>
-    </div>
-    <div id="tweet-apropos">
-    </div>
-    <% end %>
+      <div class='btn' id='show-new-tweet'> What is on your mind? </div>
+      <div class="tweet-card">
+        <%= form_for(Vivek.new, remote: true, :html => {:class => 'new-tweet', :id => 'new-tweet'}) do |f| %>
+        <div>
+          <%= f.label :tweet %>
+          <%= f.text_field :body %>
+        </div>
+        <div>
+            <%= f.submit "New Tweet", :id => 'hide-new-tweet' %>
+        </div>
+        <div id="tweet-apropos">
+        </div>
+      </div>
+      <% end %>
   <% end %>
 
   <div class="container">

@@ -28,7 +28,8 @@ var clicky = function () {
         $.getJSON(url, function (response) {
             console.log(response);
             response.forEach(function (vivek) {
-                $(".vivek-parent").append("<p>" +
+                $(".vivek-parent").append("<div class='vivek-card'>" +
+                 "<p>" +
                 "<a class='show-dane' href='danes/" + vivek.dane_id + "' >" +
                 vivek.dane_danish +
                 "</a>" +
@@ -37,7 +38,8 @@ var clicky = function () {
                 "</p>" +
                 "<p class='time'>" +
                 vivek.time +
-                "</p>"
+                "</p>" +
+                "</div>"
               );
             });
         }

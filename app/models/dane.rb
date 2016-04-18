@@ -9,9 +9,9 @@ class Dane < ActiveRecord::Base
   validates :bio, presence: true
 
   has_secure_password
-  
+
 def danish
-  "🇩🇰 " + :username.to_s
+  "🇩🇰 " + self.username.to_s
 end
 
 end

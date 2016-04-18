@@ -39,7 +39,7 @@ class ViveksController < ApplicationController
     @vivek = get_vivek
 
     if @vivek.destroy
-      redirect_to :viveks_path
+      redirect_to viveks_path
     else
       redirect_to :back
     end

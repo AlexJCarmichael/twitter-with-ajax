@@ -2,7 +2,9 @@
 
 <div class="vivek-card">
   <p>
-    <%= @vivek.dane.danish %> <%= @vivek.body %> <%= @vivek.time %>
+    <%= link_to "#{@vivek.dane.danish}", dane_path(@vivek.dane_id), class: "show-dane" %> | 
+    <%= @vivek.body %>
+    <%= @vivek.time %>
   </p>
 </div>
 <% if session[:dane_id] == @vivek.dane_id %>

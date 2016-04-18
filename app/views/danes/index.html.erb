@@ -1,7 +1,12 @@
 <h1>Here are all the Danes</h1>
 
-<% @danes.each do |dane| %>
-  <div class="vivek-card">
-    <p> <%= dane.danish %> <%= dane.bio %> <%= dane.first_name %> <%= dane.last_name %> </p>
-  </div>
-<% end %>
+<div class="show-users">
+  <% @danes.each do |dane| %>
+    <div class="vivek-card">
+      <p> <%= dane.danish %> </p>
+      <p> <%= dane.bio %> </p>
+      <p> <%= dane.first_name %> <%= dane.last_name %> </p>
+    </div>
+    <div class="spacer"></div>
+  <% end %>
+</div>

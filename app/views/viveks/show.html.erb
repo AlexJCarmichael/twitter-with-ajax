@@ -1,6 +1,10 @@
 <h1>Here is a singular Tweet</h1>
 
-<p><%= @vivek.dane.danish %> <%= @vivek.body %> <%= @vivek.time %></p>
+<div class="vivek-card">
+  <p>
+    <%= @vivek.dane.danish %> <%= @vivek.body %> <%= @vivek.time %>
+  </p>
+</div>
 <% if session[:dane_id] == @vivek.dane_id %>
    <%= link_to "Delete", vivek_path(@vivek), method: :delete, data: { confirm: "Are you sure you want to delete this teacher?
      (All students associated to this teacher will be deleted)" }, class: "delete btn" %>

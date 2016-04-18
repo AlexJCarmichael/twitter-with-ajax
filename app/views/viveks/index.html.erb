@@ -2,12 +2,14 @@
 
 <div class="vivek-parent">
   <% @viveks.each do |vivek| %>
-    <p>
-      <%= link_to "#{vivek.dane.danish}", dane_path(vivek.dane_id), class: "show-dane" %>
-      <%= link_to "#{vivek.body}", vivek_path(vivek.id), class: "show-vivek" %>
-    </p>
-    <p class="time">
-      <%= vivek.time %>
-    </p>
+    <div class="vivek-card">
+      <p>
+        <%= link_to "#{vivek.dane.danish}", dane_path(vivek.dane_id), class: "show-dane" %> |
+        <%= link_to "#{vivek.body}", vivek_path(vivek.id), class: "show-vivek" %>
+      </p>
+      <p class="time">
+        <%= vivek.time %>
+      </p>
+    </div>
   <% end %>
 </div>

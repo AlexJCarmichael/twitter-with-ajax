@@ -17,7 +17,7 @@ class DanesController < ApplicationController
     if @dane.save
       redirect_to root_path, notice: 'Dane created!'
     else
-    flash.now[:alert] = 'Errors Occured'
+    flash.now[:alert] = 'All fields are required'
     render :new
     end
   end
